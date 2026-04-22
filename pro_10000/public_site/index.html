@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
+  <title>{{gym_name}} – Transform Your Body in 90 Days | {{city}}</title>
+  <meta name="description" content="Join {{gym_name}} in {{city}} for personal training, diet plans, and real results. Book your free consultation today!" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800;900&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+  <style>
+    /* Inline hero-left/hero-right wrappers for desktop split */
+    @media (min-width: 768px) {
+      .hero-content > *:not(.hero-left):not(.hero-right) { display: none; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ===== NAVBAR ===== -->
+  <nav id="navbar">
+    <div class="nav-inner">
+      <div class="nav-logo">{{gym_name}}<span>.</span></div>
+      <ul class="nav-links">
+        <li><a href="#services">Programs</a></li>
+        <li><a href="#pricing">Pricing</a></li>
+        <li><a href="#proof">Results</a></li>
+        <li><a href="#location">Location</a></li>
+      </ul>
+      <a href="https://wa.me/{{whatsapp_number}}?text=I%20want%20to%20join%20the%2090-day%20program" target="_blank" rel="noopener" class="nav-cta" id="nav-whatsapp-cta">Message Us</a>
+    </div>
+  </nav>
+
+  <!-- ===== FLOATING WHATSAPP BUTTON ===== -->
+  <a id="whatsapp-float" href="https://wa.me/{{whatsapp_number}}?text=I%20want%20to%20join%20the%2090-day%20program" target="_blank" rel="noopener" aria-label="Chat on WhatsApp">
+    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.125.557 4.118 1.528 5.845L.057 23.428a.75.75 0 00.916.916l5.583-1.471A11.943 11.943 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.75a9.713 9.713 0 01-4.953-1.354l-.355-.211-3.676.968.983-3.593-.231-.368A9.712 9.712 0 012.25 12C2.25 6.615 6.615 2.25 12 2.25S21.75 6.615 21.75 12 17.385 21.75 12 21.75z"/></svg>
+  </a>
+
+  <!-- ===== HERO SECTION ===== -->
+  <section id="hero">
+    <div class="hero-bg" style="background: url('https://images.unsplash.com/photo-1540497077202-7c8a3999166f?auto=format&fit=crop&w=1920&q=80') center/cover no-repeat;">
+      <div class="hero-overlay"></div>
+      <div class="hero-grid-lines"></div>
+    </div>
+    <div class="hero-content">
+      <!-- LEFT: Text Content -->
+      <div class="hero-left">
+        <div class="hero-badge">
+          <span class="badge-dot"></span>
+          <span>{{city}}'s #1 Transformation Gym</span>
+        </div>
+        <h1 class="hero-headline">Transform Your Body<br /><span class="accent">in 90 Days</span></h1>
+        <p class="hero-subtext">Personal training, custom diet plan &amp; real results — guaranteed.</p>
+        <div class="hero-ctas">
+          <a id="hero-whatsapp-cta" href="https://wa.me/{{whatsapp_number}}?text=I%20want%20to%20join%20the%2090-day%20program" target="_blank" rel="noopener" class="btn btn-primary">
+            <svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.125.557 4.118 1.528 5.845L.057 23.428a.75.75 0 00.916.916l5.583-1.471A11.943 11.943 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.75a9.713 9.713 0 01-4.953-1.354l-.355-.211-3.676.968.983-3.593-.231-.368A9.712 9.712 0 012.25 12C2.25 6.615 6.615 2.25 12 2.25S21.75 6.615 21.75 12 17.385 21.75 12 21.75z"/></svg>
+            Message on WhatsApp
+          </a>
+          <a id="hero-consult-cta" href="#lead-capture" class="btn btn-secondary">Book Free Consultation</a>
+        </div>
+        <div class="hero-stats">
+          <div class="stat"><span class="stat-num">500+</span><span class="stat-label">Members</span></div>
+          <div class="stat-div"></div>
+          <div class="stat"><span class="stat-num">90</span><span class="stat-label">Day Program</span></div>
+          <div class="stat-div"></div>
+          <div class="stat"><span class="stat-num">4.9★</span><span class="stat-label">Rating</span></div>
+        </div>
+      </div>
+      <!-- RIGHT: Visual Panel (desktop only) -->
+      <div class="hero-right">
+        <div class="hero-visual" style="background: url('https://images.unsplash.com/photo-1534438327276-14e5300c3a48?auto=format&fit=crop&w=800&q=80') center/cover no-repeat;">
+          <div class="hero-visual-bg"></div>
+          <div class="hero-visual-badge">🔥 90-Day Transformation Program</div>
+        </div>
+      </div>
+    </div>
+    <div class="hero-scroll-hint">
+      <span>Scroll</span>
+      <div class="scroll-line"></div>
+    </div>
+  </section>
+
+  <!-- ===== PROOF / TRANSFORMATIONS ===== -->
+  <section id="proof" class="section">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Results</span>
+        <h2>Real <span class="accent">Transformations</span></h2>
+        <p>Our members speak louder than words</p>
+      </div>
+      <div class="carousel-wrap">
+        <div class="carousel" id="carousel">
+          <div class="carousel-slide">
+            <div class="transform-card">
+              <div class="transform-imgs">
+                <div class="transform-img before" style="background: url('https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=400&q=80') center/cover; height: 240px;">
+                  <span class="label">BEFORE</span>
+                </div>
+                <div class="transform-arrow">→</div>
+                <div class="transform-img after" style="background: url('https://images.unsplash.com/photo-1581009146145-b5ef050c2e1e?auto=format&fit=crop&w=400&q=80') center/cover; height: 240px;">
+                  <span class="label">AFTER</span>
+                </div>
+              </div>
+              <div class="transform-info">
+                <strong>Rahul, 28</strong>
+                <span>Lost 18 kg in 90 days</span>
+              </div>
+            </div>
+          </div>
+          <div class="carousel-slide">
+            <div class="transform-card">
+              <div class="transform-imgs">
+                <div class="transform-img before" style="background: url('https://images.unsplash.com/photo-1517836357463-d25dfeac3438?auto=format&fit=crop&w=400&q=80') center/cover; height: 240px;">
+                  <span class="label">BEFORE</span>
+                </div>
+                <div class="transform-arrow">→</div>
+                <div class="transform-img after" style="background: url('https://images.unsplash.com/photo-1518611012118-696072aa579a?auto=format&fit=crop&w=400&q=80') center/cover; height: 240px;">
+                  <span class="label">AFTER</span>
+                </div>
+              </div>
+              <div class="transform-info">
+                <strong>Priya, 32</strong>
+                <span>Dropped 2 dress sizes in 3 months</span>
+              </div>
+            </div>
+          </div>
+          <div class="carousel-slide">
+            <div class="transform-card">
+              <div class="transform-imgs">
+                <div class="transform-img before" style="background: url('https://images.unsplash.com/photo-1506126613408-eca07ce68773?auto=format&fit=crop&w=400&q=80') center/cover; height: 240px;">
+                  <span class="label">BEFORE</span>
+                </div>
+                <div class="transform-arrow">→</div>
+                <div class="transform-img after" style="background: url('https://images.unsplash.com/photo-1571019614242-c5c5dee9f50b?auto=format&fit=crop&w=400&q=80') center/cover; height: 240px;">
+                  <span class="label">AFTER</span>
+                </div>
+              </div>
+              <div class="transform-info">
+                <strong>Karan, 25</strong>
+                <span>Gained 8 kg lean muscle</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="carousel-dots" id="carousel-dots">
+          <button class="dot active" onclick="goToSlide(0)"></button>
+          <button class="dot" onclick="goToSlide(1)"></button>
+          <button class="dot" onclick="goToSlide(2)"></button>
+        </div>
+      </div>
+      <p class="proof-note">📸 Replace with your real before/after client photos</p>
+    </div>
+  </section>
+
+  <!-- ===== SERVICES ===== -->
+  <section id="services" class="section section-dark">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Programs</span>
+        <h2>What We <span class="accent">Offer</span></h2>
+      </div>
+      <div class="services-grid">
+        <div class="service-card">
+          <div class="service-icon">🔥</div>
+          <h3>Weight Loss Programs</h3>
+          <p>Science-backed fat loss protocols tailored to your body type</p>
+        </div>
+        <div class="service-card">
+          <div class="service-icon">💪</div>
+          <h3>Muscle Gain Training</h3>
+          <p>Progressive overload plans to build lean muscle effectively</p>
+        </div>
+        <div class="service-card">
+          <div class="service-icon">🎯</div>
+          <h3>Personal Coaching</h3>
+          <p>1-on-1 trainer attention for maximum accountability</p>
+        </div>
+        <div class="service-card">
+          <div class="service-icon">🥗</div>
+          <h3>Custom Diet Plans</h3>
+          <p>Indian-friendly nutrition plans designed by certified dietitians</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== OFFER BANNER ===== -->
+  <section id="offer" class="section">
+    <div class="container">
+      <div class="offer-banner">
+        <div class="offer-bg-glow"></div>
+        <div class="offer-tag">🔥 Limited Time Offer</div>
+        <div class="offer-text">{{offer_text}}</div>
+        <div class="offer-urgency">
+          <span class="urgency-dot"></span>
+          Limited slots this month — only a few spots left!
+        </div>
+        <a href="https://wa.me/{{whatsapp_number}}?text=I%20want%20to%20join%20the%2090-day%20program" target="_blank" rel="noopener" class="btn btn-primary" id="offer-whatsapp-cta">
+          Grab This Offer on WhatsApp
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== PRICING ===== -->
+  <section id="pricing" class="section section-dark">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Investment</span>
+        <h2>Simple <span class="accent">Pricing</span></h2>
+        <p>Transparent plans, zero hidden charges</p>
+      </div>
+      <div class="pricing-grid">
+        <div class="pricing-card">
+          <div class="pricing-name">Basic</div>
+          <div class="pricing-price">₹1,500 <span>– ₹2,000</span></div>
+          <ul class="pricing-features">
+            <li>✓ 1-page website</li>
+            <li>✓ WhatsApp integration</li>
+            <li>✓ Deployment</li>
+          </ul>
+          <a href="https://wa.me/{{whatsapp_number}}?text=I'm%20interested%20in%20the%20Basic%20plan" target="_blank" class="btn btn-outline" id="pricing-basic-cta">Get Started</a>
+        </div>
+        <div class="pricing-card featured">
+          <div class="pricing-badge">Most Popular</div>
+          <div class="pricing-name">Standard</div>
+          <div class="pricing-price">₹3,000 <span>– ₹4,000</span></div>
+          <ul class="pricing-features">
+            <li>✓ Everything in Basic</li>
+            <li>✓ Google Form integration</li>
+            <li>✓ Social links</li>
+          </ul>
+          <a href="https://wa.me/{{whatsapp_number}}?text=I'm%20interested%20in%20the%20Standard%20plan" target="_blank" class="btn btn-primary" id="pricing-standard-cta">Get Started</a>
+        </div>
+        <div class="pricing-card">
+          <div class="pricing-name">Premium</div>
+          <div class="pricing-price">₹5,000<span>+</span></div>
+          <ul class="pricing-features">
+            <li>✓ Everything in Standard</li>
+            <li>✓ 5–10 reels</li>
+            <li>✓ Content guidance</li>
+          </ul>
+          <a href="https://wa.me/{{whatsapp_number}}?text=I'm%20interested%20in%20the%20Premium%20plan" target="_blank" class="btn btn-outline" id="pricing-premium-cta">Get Started</a>
+        </div>
+      </div>
+      <div class="upsell-bar">
+        <span>📈 Monthly Growth Pack</span>
+        <span class="upsell-price">₹3,000–₹5,000/mo</span>
+        <span>— Reels · Updates · Lead Optimization</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== LEAD CAPTURE ===== -->
+  <section id="lead-capture" class="section">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Free Consultation</span>
+        <h2>Start Your <span class="accent">Journey</span></h2>
+        <p>Fill the form or message us directly — we'll respond within minutes</p>
+      </div>
+      <div class="lead-split">
+        <div class="lead-form-wrap">
+          <div class="form-placeholder">
+            <div class="form-placeholder-icon">📋</div>
+            <h4>Google Form Embed</h4>
+            <p>Replace this block with your Google Form iframe:</p>
+            <code>&lt;iframe src="{{form_url}}" ...&gt;&lt;/iframe&gt;</code>
+            <!-- REPLACE BELOW WITH YOUR GOOGLE FORM IFRAME -->
+            <!-- <iframe src="{{form_url}}" width="100%" height="500" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe> -->
+          </div>
+        </div>
+        <div class="lead-whatsapp-wrap">
+          <div class="wa-card">
+            <div class="wa-icon">
+              <svg viewBox="0 0 24 24" fill="currentColor" width="48" height="48"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.125.557 4.118 1.528 5.845L.057 23.428a.75.75 0 00.916.916l5.583-1.471A11.943 11.943 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.75a9.713 9.713 0 01-4.953-1.354l-.355-.211-3.676.968.983-3.593-.231-.368A9.712 9.712 0 012.25 12C2.25 6.615 6.615 2.25 12 2.25S21.75 6.615 21.75 12 17.385 21.75 12 21.75z"/></svg>
+            </div>
+            <h3>Prefer WhatsApp?</h3>
+            <p>Chat directly with our trainer. Get answers instantly.</p>
+            <a href="https://wa.me/{{whatsapp_number}}?text=I%20want%20to%20join%20the%2090-day%20program" target="_blank" rel="noopener" class="btn btn-primary btn-wa" id="lead-whatsapp-cta">
+              Chat on WhatsApp
+            </a>
+            <div class="wa-timing">⏱ Typically replies in &lt; 5 mins</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== LOCATION ===== -->
+  <section id="location" class="section section-dark">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Find Us</span>
+        <h2>Visit <span class="accent">{{gym_name}}</span></h2>
+      </div>
+      <div class="location-wrap">
+        <div class="map-wrap">
+          <!-- REPLACE WITH YOUR GOOGLE MAPS EMBED -->
+          <div class="map-placeholder">
+            <div class="map-pin">📍</div>
+            <p>Replace with Google Maps embed:<br/>
+            <code>&lt;iframe src="{{maps_embed}}" ...&gt;&lt;/iframe&gt;</code></p>
+          </div>
+        </div>
+        <div class="location-info">
+          <div class="info-item">
+            <span class="info-icon">📞</span>
+            <div>
+              <strong>Phone</strong>
+              <a href="tel:{{phone}}">{{phone}}</a>
+            </div>
+          </div>
+          <div class="info-item">
+            <span class="info-icon">🕐</span>
+            <div>
+              <strong>Timings</strong>
+              <span>Mon–Sat: 6AM–10PM</span>
+            </div>
+          </div>
+          <div class="info-item">
+            <span class="info-icon">📍</span>
+            <div>
+              <strong>City</strong>
+              <span>{{city}}</span>
+            </div>
+          </div>
+          <a href="https://wa.me/{{whatsapp_number}}?text=I%20want%20to%20join%20the%2090-day%20program" target="_blank" class="btn btn-primary" id="location-cta">Get Directions on WhatsApp</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FOOTER ===== -->
+  <footer id="footer">
+    <div class="container">
+      <div class="footer-inner">
+        <div class="footer-brand">
+          <span class="footer-logo">{{gym_name}}</span>
+          <p>Transform your body. Change your life.</p>
+        </div>
+        <div class="footer-links">
+          <a href="{{instagram_url}}" target="_blank" rel="noopener" id="footer-instagram" aria-label="Instagram">
+            <svg viewBox="0 0 24 24" fill="currentColor" width="24" height="24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+          </a>
+          <a href="https://wa.me/{{whatsapp_number}}" target="_blank" rel="noopener" id="footer-whatsapp" aria-label="WhatsApp">
+            <svg viewBox="0 0 24 24" fill="currentColor" width="24" height="24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.125.557 4.118 1.528 5.845L.057 23.428a.75.75 0 00.916.916l5.583-1.471A11.943 11.943 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.75a9.713 9.713 0 01-4.953-1.354l-.355-.211-3.676.968.983-3.593-.231-.368A9.712 9.712 0 012.25 12C2.25 6.615 6.615 2.25 12 2.25S21.75 6.615 21.75 12 17.385 21.75 12 21.75z"/></svg>
+          </a>
+        </div>
+        <div class="footer-copy">
+          <p>© {{gym_name}} | All Rights Reserved</p>
+          <p>Built with ❤️ for fitness transformations in {{city}}</p>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
