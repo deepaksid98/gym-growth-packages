@@ -3,170 +3,279 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Gym Growth Packages - Demo Hub</title>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&family=Inter:wght@400;500&display=swap" rel="stylesheet">
-  <style>
-    body {
-      font-family: 'Inter', sans-serif;
-      background: #0B0B0B;
-      color: #FFFFFF;
-      margin: 0;
-      padding: 0;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      min-height: 100vh;
-    }
-    .container {
-      max-width: 800px;
-      width: 100%;
-      padding: 40px 20px;
-      text-align: center;
-    }
-    h1 {
-      font-family: 'Poppins', sans-serif;
-      font-weight: 800;
-      font-size: 2.5rem;
-      margin-bottom: 10px;
-    }
-    h1 span {
-      color: #E53935;
-    }
-    p {
-      color: #AAAAAA;
-      margin-bottom: 50px;
-      font-size: 1.1rem;
-    }
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 20px;
-    }
-    .card {
-      background: #181818;
-      border: 1px solid #2A2A2A;
-      border-radius: 16px;
-      padding: 30px;
-      text-align: left;
-      transition: transform 0.2s, box-shadow 0.2s, border-color 0.2s;
-      text-decoration: none;
-      color: inherit;
-      display: flex;
-      flex-direction: column;
-    }
-    .card:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 10px 30px rgba(229,57,53,0.15);
-      border-color: rgba(229,57,53,0.5);
-    }
-    .badge {
-      display: inline-block;
-      padding: 4px 12px;
-      border-radius: 20px;
-      font-size: 0.75rem;
-      font-weight: 600;
-      margin-bottom: 15px;
-      width: fit-content;
-    }
-    .badge-basic { background: rgba(255,255,255,0.1); color: #FFF; }
-    .badge-core { background: rgba(37,211,102,0.15); color: #25D366; }
-    .badge-pro { background: rgba(229,57,53,0.15); color: #ff9999; border: 1px solid rgba(229,57,53,0.3); }
-    
-    .card h2 {
-      font-family: 'Poppins', sans-serif;
-      font-size: 1.5rem;
-      margin: 0 0 10px 0;
-    }
-    .card p.desc {
-      color: #888;
-      font-size: 0.9rem;
-      margin: 0 0 20px 0;
-      flex-grow: 1;
-    }
-    .card .price {
-      font-family: 'Poppins', sans-serif;
-      font-weight: 800;
-      font-size: 1.2rem;
-      color: #E53935;
-      margin-top: auto;
-    }
-    .links {
-      display: flex;
-      gap: 10px;
-      margin-top: 15px;
-    }
-    .btn {
-      flex: 1;
-      padding: 10px;
-      border-radius: 8px;
-      text-align: center;
-      font-size: 0.85rem;
-      font-weight: 600;
-      border: 1px solid #333;
-      transition: background 0.2s;
-      text-decoration: none;
-      color: inherit;
-    }
-    .btn:hover {
-      background: #222;
-    }
-    .btn-primary {
-      background: rgba(229,57,53,0.1);
-      border-color: rgba(229,57,53,0.3);
-      color: #ff9999;
-    }
-    .btn-primary:hover {
-      background: rgba(229,57,53,0.2);
-    }
-  </style>
+  <title>Gym Growth System — Premium Gym Websites That Convert</title>
+  <meta name="description" content="We design and build high-converting gym websites with integrated lead capture, client tracking, and growth systems. From ₹1,500.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="hub-styles.css">
 </head>
 <body>
 
-  <div class="container">
-    <h1>Gym Growth <span>Packages</span></h1>
-    <p>Select a package below to view the live demo.</p>
+<!-- CURSOR GLOW -->
+<div class="cursor-glow" id="cursor-glow"></div>
 
-    <div class="grid">
-      
-      <!-- Basic -->
-      <a href="./basic_1500/" class="card">
-        <span class="badge badge-basic">Tier 1</span>
-        <h2>Basic</h2>
-        <p class="desc">A fast-loading, single-page presence focused purely on getting leads via WhatsApp.</p>
-        <div class="price">₹1,500</div>
-      </a>
+<!-- NAV -->
+<nav class="nav" id="nav">
+  <div class="nav-logo">Gym<span>Growth</span></div>
+  <div class="nav-links">
+    <a href="#services">Services</a>
+    <a href="#process">Process</a>
+    <a href="#packages">Packages</a>
+    <a href="https://wa.me/916360535945?text=Hi%2C%20I%20want%20a%20gym%20website" target="_blank" class="nav-cta">Let's Talk →</a>
+  </div>
+</nav>
 
-      <!-- Basic Plus -->
-      <a href="./basic_plus_2000/" class="card">
-        <span class="badge badge-basic">Tier 2</span>
-        <h2>Basic Plus</h2>
-        <p class="desc">Upgraded visual branding with a premium dark theme and social media links.</p>
-        <div class="price">₹2,000</div>
-      </a>
-
-      <!-- Core -->
-      <a href="./core_5000/" class="card">
-        <span class="badge badge-core">Tier 3</span>
-        <h2>Core</h2>
-        <p class="desc">The full conversion engine. Includes hero hook, social proof, services, and Google Form.</p>
-        <div class="price">₹5,000</div>
-      </a>
-
-      <!-- Pro -->
-      <div class="card" style="cursor: default;">
-        <span class="badge badge-pro">Tier 4 · Full System</span>
-        <h2>Pro</h2>
-        <p class="desc">The complete business-in-a-box. Includes the public lead generation site AND the private gym owner dashboard.</p>
-        <div class="price">₹10,000</div>
-        <div class="links">
-          <a href="./pro_10000/public_site/" class="btn">View Landing Page</a>
-          <a href="./pro_10000/owner_dashboard/" class="btn btn-primary">View Dashboard</a>
-        </div>
-      </div>
-
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-grid"></div>
+  <div class="hero-orb hero-orb-1"></div>
+  <div class="hero-orb hero-orb-2"></div>
+  <div class="hero-orb hero-orb-3"></div>
+  <div class="hero-content">
+    <div class="hero-badge"><span class="pulse"></span> Now Accepting New Clients</div>
+    <h1>
+      <span class="line">We Build Websites</span>
+      <span class="line">That Make Gyms <span class="gradient">Grow.</span></span>
+    </h1>
+    <p class="hero-sub">High-converting landing pages, lead capture systems, and client dashboards — designed specifically for fitness businesses.</p>
+    <div class="hero-actions">
+      <a href="#packages" class="btn-hero btn-hero-primary">View Live Demos ↓</a>
+      <a href="https://wa.me/916360535945?text=Hi%2C%20I%20want%20a%20gym%20website" target="_blank" class="btn-hero btn-hero-outline">💬 WhatsApp Us</a>
+    </div>
+    <div class="hero-stats">
+      <div class="hero-stat"><div class="num" id="counter-1">0</div><div class="lbl">Projects Delivered</div></div>
+      <div class="hero-stat"><div class="num" id="counter-2">0</div><div class="lbl">Happy Gym Owners</div></div>
+      <div class="hero-stat"><div class="num">48h</div><div class="lbl">Avg. Delivery</div></div>
     </div>
   </div>
+</section>
+
+<!-- MARQUEE -->
+<div class="marquee">
+  <div class="marquee-inner">
+    <span>Web Design</span><span>•</span><span>Lead Generation</span><span>•</span>
+    <span>WhatsApp Integration</span><span>•</span><span>Client Tracking</span><span>•</span>
+    <span>Google Forms</span><span>•</span><span>SEO Optimized</span><span>•</span>
+    <span>Mobile First</span><span>•</span><span>Fast Delivery</span><span>•</span>
+    <span>Web Design</span><span>•</span><span>Lead Generation</span><span>•</span>
+    <span>WhatsApp Integration</span><span>•</span><span>Client Tracking</span><span>•</span>
+    <span>Google Forms</span><span>•</span><span>SEO Optimized</span><span>•</span>
+    <span>Mobile First</span><span>•</span><span>Fast Delivery</span><span>•</span>
+  </div>
+</div>
+
+<!-- SERVICES -->
+<section id="services">
+  <div class="section-header reveal">
+    <span class="section-label">What We Do</span>
+    <h2 class="section-title">Everything Your Gym Needs Online</h2>
+    <p class="section-sub">From a simple WhatsApp landing page to a full client management system — we've got a solution for every budget.</p>
+  </div>
+  <div class="services-grid">
+    <div class="service-card reveal">
+      <div class="service-icon">🎨</div>
+      <h3>Premium Design</h3>
+      <p>Dark-themed, mobile-first designs that look premium and build instant trust with potential members.</p>
+    </div>
+    <div class="service-card reveal">
+      <div class="service-icon">📲</div>
+      <h3>WhatsApp Integration</h3>
+      <p>Every page connects directly to your WhatsApp. Visitors tap once and they're chatting with you.</p>
+    </div>
+    <div class="service-card reveal">
+      <div class="service-icon">📊</div>
+      <h3>Lead Capture System</h3>
+      <p>Google Forms integrated with Google Sheets. Every lead automatically captured and organized.</p>
+    </div>
+    <div class="service-card reveal">
+      <div class="service-icon">👥</div>
+      <h3>Client Dashboard</h3>
+      <p>Track client progress, log weekly weights, and manage your entire roster from a private dashboard.</p>
+    </div>
+    <div class="service-card reveal">
+      <div class="service-icon">🔒</div>
+      <h3>Secure & Private</h3>
+      <p>Token-authenticated backend. Your client data is protected with zero-compromise security.</p>
+    </div>
+    <div class="service-card reveal">
+      <div class="service-icon">⚡</div>
+      <h3>Lightning Fast</h3>
+      <p>Static HTML — no WordPress, no plugins, no bloat. Pages load in under 1 second on any device.</p>
+    </div>
+  </div>
+</section>
+
+<!-- PROCESS -->
+<section id="process" style="background:var(--bg2)">
+  <div class="section-header reveal">
+    <span class="section-label">How It Works</span>
+    <h2 class="section-title">Live in 48 Hours</h2>
+    <p class="section-sub">From first message to live website — our process is designed for speed and simplicity.</p>
+  </div>
+  <div class="process-track reveal">
+    <div class="process-step">
+      <div class="step-num">1</div>
+      <h4>Message Us</h4>
+      <p>Send your gym name, logo, and details via WhatsApp</p>
+    </div>
+    <div class="process-step">
+      <div class="step-num">2</div>
+      <h4>Choose a Package</h4>
+      <p>Pick the tier that fits your needs and budget</p>
+    </div>
+    <div class="process-step">
+      <div class="step-num">3</div>
+      <h4>We Build It</h4>
+      <p>Custom design, content integration, and deployment</p>
+    </div>
+    <div class="process-step">
+      <div class="step-num">4</div>
+      <h4>Go Live</h4>
+      <p>Your site is live and bringing in leads instantly</p>
+    </div>
+  </div>
+</section>
+
+<!-- PACKAGES -->
+<section id="packages">
+  <div class="section-header reveal">
+    <span class="section-label">Live Demos</span>
+    <h2 class="section-title">Choose Your Growth Package</h2>
+    <p class="section-sub">Each package is a live, working demo. Click to explore the actual sites your gym will get.</p>
+  </div>
+  <div class="packages-grid">
+    <!-- Basic -->
+    <div class="pkg-card reveal">
+      <div class="pkg-badge">Starter</div>
+      <div class="pkg-name">Basic</div>
+      <div class="pkg-price">₹1,500</div>
+      <ul class="pkg-features">
+        <li>Single-page design</li>
+        <li>WhatsApp CTA button</li>
+        <li>Contact & map section</li>
+        <li>Mobile responsive</li>
+      </ul>
+      <a href="./basic_1500/" class="pkg-btn">View Live Demo →</a>
+    </div>
+    <!-- Basic Plus -->
+    <div class="pkg-card reveal">
+      <div class="pkg-badge">Enhanced</div>
+      <div class="pkg-name">Basic Plus</div>
+      <div class="pkg-price">₹2,000</div>
+      <ul class="pkg-features">
+        <li>Premium dark theme</li>
+        <li>Social media links</li>
+        <li>Brand identity design</li>
+        <li>Floating WhatsApp</li>
+      </ul>
+      <a href="./basic_plus_2000/" class="pkg-btn">View Live Demo →</a>
+    </div>
+    <!-- Core -->
+    <div class="pkg-card featured reveal">
+      <div class="pkg-badge">🔥 Most Popular</div>
+      <div class="pkg-name">Core</div>
+      <div class="pkg-price">₹5,000</div>
+      <ul class="pkg-features">
+        <li>Full conversion engine</li>
+        <li>Social proof section</li>
+        <li>Google Form lead capture</li>
+        <li>Pricing & offers display</li>
+        <li>Animated scroll effects</li>
+      </ul>
+      <a href="./core_5000/" class="pkg-btn">View Live Demo →</a>
+    </div>
+    <!-- Pro -->
+    <div class="pkg-card reveal">
+      <div class="pkg-badge" style="color:#ff9999">⚡ Full System</div>
+      <div class="pkg-name">Pro</div>
+      <div class="pkg-price">₹10,000</div>
+      <ul class="pkg-features">
+        <li>Everything in Core</li>
+        <li>Private owner dashboard</li>
+        <li>Client weight tracker</li>
+        <li>Google Sheets backend</li>
+        <li>Token-secured API</li>
+      </ul>
+      <a href="./pro_10000/public_site/" class="pkg-btn">View Landing Page →</a>
+      <div class="pkg-links">
+        <a href="./pro_10000/owner_dashboard/">🔐 Owner Dashboard</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIAL -->
+<section style="background:var(--bg2)">
+  <div class="reveal">
+    <div class="testimonial-card">
+      <blockquote>"I just sent my gym name and photos — and within 2 days I had a professional website with WhatsApp leads flowing in. Best investment I've made for my gym."</blockquote>
+      <div class="author">— Gym Owner, Bangalore</div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-section">
+  <div class="reveal">
+    <span class="section-label">Ready to Grow?</span>
+    <h2 class="section-title">Let's Build Your Gym's Online Presence</h2>
+    <p class="section-sub">Message us on WhatsApp — we'll have your site designed and live within 48 hours. No calls needed, no complicated process.</p>
+    <div class="cta-actions">
+      <a href="https://wa.me/916360535945?text=Hi%2C%20I%20want%20a%20gym%20website.%20Let's%20get%20started!" target="_blank" class="btn-hero btn-hero-primary">💬 Start on WhatsApp →</a>
+      <a href="#packages" class="btn-hero btn-hero-outline">↑ See Packages Again</a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <p>© 2026 GymGrowth · Built with precision · <a href="https://wa.me/916360535945">Contact</a></p>
+</footer>
+
+<!-- JS: Cursor glow, counters, scroll reveal -->
+<script>
+// Cursor glow follow
+const glow = document.getElementById('cursor-glow');
+document.addEventListener('mousemove', e => {
+  glow.style.left = e.clientX + 'px';
+  glow.style.top = e.clientY + 'px';
+});
+
+// Scroll reveal
+const revealEls = document.querySelectorAll('.reveal');
+const revealObserver = new IntersectionObserver((entries) => {
+  entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); revealObserver.unobserve(e.target); }});
+}, { threshold: 0.15 });
+revealEls.forEach(el => revealObserver.observe(el));
+
+// Counter animation
+function animateCounter(id, target) {
+  const el = document.getElementById(id);
+  let current = 0;
+  const step = Math.ceil(target / 40);
+  const interval = setInterval(() => {
+    current += step;
+    if (current >= target) { current = target; clearInterval(interval); }
+    el.textContent = current + '+';
+  }, 40);
+}
+// Trigger counters when hero is visible
+const heroObs = new IntersectionObserver((entries) => {
+  if (entries[0].isIntersecting) {
+    animateCounter('counter-1', 25);
+    animateCounter('counter-2', 20);
+    heroObs.disconnect();
+  }
+}, { threshold: 0.5 });
+heroObs.observe(document.querySelector('.hero'));
+
+// Navbar background on scroll
+window.addEventListener('scroll', () => {
+  const nav = document.getElementById('nav');
+  nav.style.background = window.scrollY > 50 ? 'rgba(5,5,8,.9)' : 'rgba(5,5,8,.6)';
+});
+</script>
 
 </body>
 </html>
