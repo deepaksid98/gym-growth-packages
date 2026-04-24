@@ -198,6 +198,18 @@
   </div>
 </div>
 
+<!-- AUTHENTICATION MODAL (SECURITY GATEWAY) -->
+<div class="modal-overlay" id="auth-modal" style="z-index:9999;">
+  <div class="modal">
+    <h2 style="color:var(--red);">🔒 Security Gateway</h2>
+    <p style="color:var(--gray2); font-size:0.9rem; margin-bottom:16px;">This dashboard is protected to secure client data. Please enter your secret token.</p>
+    <div class="form-group">
+      <input type="password" id="auth-token-input" placeholder="Enter Token..." onkeypress="if(event.key==='Enter') submitAuth()"/>
+    </div>
+    <button class="btn btn-red" style="width:100%;margin-top:8px;" onclick="submitAuth()">Unlock Dashboard</button>
+  </div>
+</div>
+
 <!-- CLIENT DETAIL PANEL -->
 <div class="detail-panel" id="detail-panel">
   <button class="detail-close" onclick="closeDetail()">✕</button>
@@ -218,6 +230,40 @@ let logsCache = {};        // { clientId: [log, ...] }
 let selectedClientId = null;
 let useBackend = !!API_URL;
 
+// ==================== SECURITY ====================
+let authToken = localStorage.getItem('gym_auth_token') || '';
+
+function escapeHTML(str) {
+  if (!str) return '';
+  return str.toString().replace(/[&<>'"]/g, 
+    tag => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', "'": '&#39;', '"': '&quot;' }[tag])
+  );
+}
+
+function checkAuth() {
+  if (useBackend && !authToken) {
+    document.getElementById('auth-modal').style.display = 'flex';
+    return false;
+  }
+  return true;
+}
+
+function submitAuth() {
+  const token = document.getElementById('auth-token-input').value.trim();
+  if (!token) return;
+  authToken = token;
+  localStorage.setItem('gym_auth_token', token);
+  document.getElementById('auth-modal').style.display = 'none';
+  loadClients(); // retry loading after auth
+}
+
+function handleAuthError() {
+  authToken = '';
+  localStorage.removeItem('gym_auth_token');
+  document.getElementById('auth-modal').style.display = 'flex';
+  showToast('🔒 Session expired or invalid token');
+}
+
 // Connection status indicator
 function setStatus(online) {
   const el = document.getElementById('conn-status');
@@ -228,21 +274,29 @@ function setStatus(online) {
 
 // ── API helpers ───────────────────────────────────
 async function apiGet(params) {
+  params.token = authToken; // inject secure token
   const url = API_URL + '?' + new URLSearchParams(params);
   const res  = await fetch(url);
-  return res.json();
+  const json = await res.json();
+  if (json.error === "Unauthorized") throw new Error("Unauthorized");
+  return json;
 }
 
 async function apiPost(body) {
+  body.token = authToken; // inject secure token
   const res = await fetch(API_URL, {
     method: 'POST',
     body: JSON.stringify(body)
   });
-  return res.json();
+  const json = await res.json();
+  if (json.error === "Unauthorized") throw new Error("Unauthorized");
+  return json;
 }
 
 // ── Load all clients ──────────────────────────────
 async function loadClients() {
+  if (!checkAuth()) return; // Wait for security token input
+
   if (!useBackend) { clients = JSON.parse(localStorage.getItem('gym_clients') || '[]'); render(); setStatus(false); return; }
   try {
     showToast('⏳ Loading from Google Sheets…');
@@ -257,6 +311,10 @@ async function loadClients() {
     setStatus(true);
     render();
   } catch (err) {
+    if (err.message === "Unauthorized") {
+      handleAuthError();
+      return;
+    }
     useBackend = false;
     clients = JSON.parse(localStorage.getItem('gym_clients') || '[]');
     setStatus(false);
@@ -290,9 +348,9 @@ function render() {
     const [gLabel, gClass] = goalMap[c.goal] || ['—',''];
     const tr = document.createElement('tr');
     tr.innerHTML = `
-      <td><strong>${c.name}</strong></td>
-      <td>${c.age || '—'}</td>
-      <td><a href="tel:${c.phone}" style="color:var(--red)">${c.phone}</a></td>
+      <td><strong>${escapeHTML(c.name)}</strong></td>
+      <td>${escapeHTML(c.age) || '—'}</td>
+      <td><a href="tel:${escapeHTML(c.phone)}" style="color:var(--red)">${escapeHTML(c.phone)}</a></td>
       <td>${c.startWeight} kg</td>
       <td>${current} kg ${deltaStr}</td>
       <td><span class="goal-badge ${gClass}">${gLabel}</span></td>
@@ -394,7 +452,7 @@ function openDetail(id) {
     const delta = prev ? (l.weight - prev.weight).toFixed(1) : '—';
     const dClass = delta < 0 ? 'delta-down' : 'delta-up';
     return `<div class="week-entry">
-      <div><div class="week-num">Week ${l.week} · ${l.date}</div>${l.notes ? `<div style="font-size:.8rem;color:var(--gray2);margin-top:2px">${l.notes}</div>` : ''}</div>
+      <div><div class="week-num">Week ${l.week} · ${escapeHTML(l.date)}</div>${l.notes ? `<div style="font-size:.8rem;color:var(--gray2);margin-top:2px">${escapeHTML(l.notes)}</div>` : ''}</div>
       <div style="text-align:right">
         <div class="week-weight">${l.weight} kg</div>
         ${delta !== '—' ? `<div class="week-delta ${dClass}">${delta > 0 ? '+' : ''}${delta} kg</div>` : ''}
@@ -404,15 +462,15 @@ function openDetail(id) {
 
   document.getElementById('detail-content').innerHTML = `
     <div style="margin-bottom:20px">
-      <h2 style="font-size:1.4rem">${c.name}</h2>
-      <div style="color:var(--gray2);font-size:.85rem;margin-top:4px">${c.phone} · Age ${c.age} · Joined ${c.joinedAt}</div>
+      <h2 style="font-size:1.4rem">${escapeHTML(c.name)}</h2>
+      <div style="color:var(--gray2);font-size:.85rem;margin-top:4px">${escapeHTML(c.phone)} · Age ${escapeHTML(c.age)} · Joined ${escapeHTML(c.joinedAt)}</div>
     </div>
     <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:16px">
       <div class="stat-card"><div class="num" style="font-size:1.4rem">${c.startWeight} kg</div><div class="lbl">Start</div></div>
       <div class="stat-card"><div class="num" style="font-size:1.4rem;color:${changeColor}">${totalChange > 0 ? '+' : ''}${totalChange} kg</div><div class="lbl">Total Change</div></div>
     </div>
-    <div style="margin-bottom:12px"><span class="badge badge-red">${goalMap[c.goal] || c.goal}</span></div>
-    ${c.notes ? `<div style="font-size:.85rem;color:var(--gray2);background:var(--bg3);padding:10px 14px;border-radius:8px;margin-bottom:16px">📝 ${c.notes}</div>` : ''}
+    <div style="margin-bottom:12px"><span class="badge badge-red">${goalMap[c.goal] || escapeHTML(c.goal)}</span></div>
+    ${c.notes ? `<div style="font-size:.85rem;color:var(--gray2);background:var(--bg3);padding:10px 14px;border-radius:8px;margin-bottom:16px">📝 ${escapeHTML(c.notes)}</div>` : ''}
     <div class="chart-area">
       <div class="chart-title">Weight Progress</div>
       ${chartSvg}

@@ -6,9 +6,11 @@
 
 const SHEET_NAME = "Clients";
 const LOG_SHEET  = "WeeklyLogs";
+const SECRET_TOKEN = "IRONCORE_SECURE_2026"; // REPLACE THIS with your own secure password
 
 // ── Entry point ──────────────────────────────────
 function doGet(e) {
+  if (e.parameter.token !== SECRET_TOKEN) return ok({ error: "Unauthorized" });
   const action = e.parameter.action;
   if (action === "getClients")   return ok(getClients());
   if (action === "getLogs")      return ok(getLogs(e.parameter.clientId));
@@ -17,6 +19,7 @@ function doGet(e) {
 
 function doPost(e) {
   const data   = JSON.parse(e.postData.contents);
+  if (data.token !== SECRET_TOKEN) return ok({ error: "Unauthorized" });
   const action = data.action;
   if (action === "addClient")    return ok(addClient(data.client));
   if (action === "logWeight")    return ok(logWeight(data.log));
