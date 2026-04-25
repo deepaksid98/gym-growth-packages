@@ -27,7 +27,7 @@ img{max-width:100%;display:block}
 
 /* ===== HERO ===== */
 .hero{position:relative;min-height:100vh;display:flex;align-items:center;overflow:hidden}
-.hero-bg{position:absolute;inset:0;background:url('https://lh5.googleusercontent.com/p/AF1QipMDU0YOPM1h0X6pLmD_ql3EeY1J4G_GIdwF7pqN=w1080-h608-p-k-no-v0') center/cover no-repeat}
+.hero-bg{position:absolute;inset:0;background:url('https://lh3.googleusercontent.com/p/AF1QipOxXC5ewI5sOuvkL-u34kWBBxU_1y6HvqH5u2AM=w1920') center/cover no-repeat}
 .hero-overlay{position:absolute;inset:0;background:linear-gradient(135deg,rgba(10,10,10,.88) 0%,rgba(10,10,10,.6) 40%,rgba(10,10,10,.85) 100%)}
 .hero-content{position:relative;z-index:2;padding:120px 24px 80px;max-width:680px}
 .hero-logo{font-family:'Oswald',sans-serif;font-size:1.1rem;font-weight:700;color:var(--accent);letter-spacing:.15em;margin-bottom:24px;display:flex;align-items:center;gap:8px}
